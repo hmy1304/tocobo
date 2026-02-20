@@ -2,12 +2,14 @@ import React from 'react'
 import { headerData } from '../util/header'
 
 const Util = () => {
-  const utilIcon =headerData.label
+  const utilData =headerData.utils
   return (
-    <ul>
-      {utilIcon.map((label)=>(
-        <li key={label.id}> 
-          <img src={label.src} alt={label.alt} />
+    <ul className='utilList'>
+      {utilData.map((u)=>(
+        <li key={u.id}>
+          <a href={u.href}>
+            <img src={u.icon} alt="" />
+          </a>
         </li>
       ))}
     </ul>

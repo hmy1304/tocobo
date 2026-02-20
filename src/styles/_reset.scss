@@ -61,10 +61,22 @@ button {
 
 section {
   min-height: 100vh;
+  &:nth-child(odd) {
+    background: rgb(255,235,218);
+  }
 }
 
 ul,
 ol,
 dl {
   list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
 }

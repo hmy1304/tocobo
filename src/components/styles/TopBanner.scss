@@ -1,0 +1,31 @@
+.TopBanner {
+    position: fixed;
+    background: var(--primary);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4rem;
+    color: var(--bg);
+    text-align: center;
+    z-index: 5;
+    transition: all .3s;
+    .swiper {
+        height: 100%;
+        a {
+            display: block;
+            align-content: center;
+            height: 100%;
+            font-size: 1.3rem;
+            z-index: 0;
+        }
+    }
+    .closeBtn {
+        position: absolute;
+        right: 2rem;
+        width: 1.5rem;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 3;
+        cursor: pointer;
+    }
+}

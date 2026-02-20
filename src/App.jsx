@@ -6,12 +6,31 @@ import Footer from "./components/Footer"
 import Follow from "./sections/Follow"
 import SkinCare from "./sections/SkinCare"
 import Collection from "./sections/Collection"
+import TopBanner from './components/TopBanner'
+import FixedTopbtn from './components/FixedTopbtn'
+import { useState, useEffect } from 'react'
 
 function App() {
+  const [topBanner, setTopBanner] = useState('')
+  const [isScrolled, setIsScrolled] = useState(false)
 
+  const upTopBanner = () => {
+    setTopBanner('up')
+  }
+
+  useEffect(()=> {
+    const handleScroll = () => {
+      const scrollTop=window.scrollY
+      setIsScrolled(scrollTop>0)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+  },[])
 
   return (
-    <div>
+    <div className={`app-container ${topBanner} ${isScrolled? 'scrolled':''}`}>
+      <FixedTopbtn />
+      <TopBanner onClick={upTopBanner}/>
       <Header />
       <main>
         <section id='hero' className='section'>

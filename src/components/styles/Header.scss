@@ -1,0 +1,52 @@
+header {
+    position: fixed;
+    top: 4rem;
+    width: 100%;
+    height: 10.5rem;
+    z-index: 5;
+    transition: all .3s;
+    .inner {
+        max-width: 160rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .navList {
+            display: flex;
+            gap: 2rem;
+            a {
+                display: block;
+                font-size: 1.8rem;
+                text-transform: capitalize;
+                color: var(--primary);
+                padding: 0 .5rem;
+                position: relative;
+                &::after{
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    width: 0;
+                    height: .1rem;
+                    background: var(--primary);
+                    left: 0;
+                    transition: width .3s ease;
+                }
+                &:hover::after {
+                    width: 100%;
+                }
+            }
+        }
+
+        h1.tit {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .utilList {
+            display: flex;
+            gap: 1.2rem;
+        }
+    }
+}
