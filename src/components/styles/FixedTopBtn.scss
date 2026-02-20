@@ -4,7 +4,8 @@
     gap: 1rem;
     position: fixed;
     right: 2rem;
-    bottom: 2rem;
+    bottom: -20rem;
+    transition: all .3s;
     z-index: 5;
     button {
         height: 5.6rem;

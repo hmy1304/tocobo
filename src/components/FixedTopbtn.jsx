@@ -1,10 +1,15 @@
 import React from 'react'
 import "./styles/FixedTopBtn.scss"
+import { useSmoothScroll } from '../hooks/useSomoothScroll'
 
 const FixedTopbtn = () => {
+  const scrollTo = useSmoothScroll()
+
   return (
     <div className='FixedTopbtn'>
-        <button>위로 올라가는 버튼</button>
+        <button onClick={()=> scrollTo()}>
+            <img src="public\img\icon_top.svg" alt="" />
+        </button>
         <a href="">
             TCB
         </a>
