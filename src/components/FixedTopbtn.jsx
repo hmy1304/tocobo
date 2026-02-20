@@ -7,7 +7,7 @@ const FixedTopbtn = () => {
 
   return (
     <div className='FixedTopbtn'>
-        <button onClick={()=> scrollTo()}>
+        <button onClick={()=> window.scrollTo({top:0,behavior:'smooth'})}>
             <img src="public\img\icon_top.svg" alt="" />
         </button>
         <a href="">
