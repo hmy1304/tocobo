@@ -1,25 +1,34 @@
 .FixedTopbtn{
     display: flex;
     flex-direction: column;
+    text-align: center;
     gap: 1rem;
     position: fixed;
     right: 2rem;
     bottom: -20rem;
     transition: all .3s;
     z-index: 5;
-    button {
+    .top-btn {
         height: 5.6rem;
         width: 5.6rem;
-        background: var(--secondary);
+        background: var(--secondary) url("/img/icon_top.svg") center/40% no-repeat;
         border-radius: 999px;
     }
-    a {
+    .talk-btn {
         align-content: center;
         text-align: center;
         color: var(--bg);
         font-size: 1.8rem;
-        background: url("../../../public/img/icon_talk.svg") no-repeat center/cover;
-        height: 6.3rem;
+        background: url("/img/icon_talk.svg") no-repeat center/contain;
+        height: 5.6rem;
         width: 5.6rem;
+    }
+
+    p {
+        color:var(--primary);
+        font-family: 'Source Serif 4', serif;
+        font-style: italic;
+        font-weight: 600;
+        font-size: 1.6rem;
     }
 }
