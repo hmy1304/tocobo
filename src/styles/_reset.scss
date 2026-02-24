@@ -59,12 +59,12 @@ button {
   color: inherit;
 }
 
-section {
-  min-height: 100vh;
-  &:nth-child(odd) {
-    background: rgb(255,235,218);
-  }
-}
+// section {
+//   min-height: 100vh;
+//   &:nth-child(odd) {
+//     background: rgb(255,235,218);
+//   }
+// }
 
 ul,
 ol,
@@ -79,4 +79,18 @@ a {
 
 img {
   max-width: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e7e7e7;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 50px;
 }

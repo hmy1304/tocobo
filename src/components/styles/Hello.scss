@@ -1,0 +1,19 @@
+.hello-inner {
+    padding-top: 12rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .img-wrap {
+        border-radius: 2rem;
+        overflow: hidden;
+    }
+    .t-wrap {
+        text-align: center;
+        width: 63rem;
+        h2.tit {
+            color: var(--primary);
+            margin: 3rem 0 2rem;
+        }
+    }
+}
