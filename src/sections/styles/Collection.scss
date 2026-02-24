@@ -1,0 +1,28 @@
+.collection-inner {
+    text-align: center;
+    .collection-slider {
+
+        .img-wrap {
+            width: 36rem;
+            height: 36rem;
+            overflow: hidden;
+            border-radius: 1rem;
+            background: var(--bg); 
+            align-content: center;
+            margin: 0 auto;  
+            
+            img {
+                width: 110%;
+            }
+        }
+
+        .swiper-pagination {
+            position: static;
+        }
+    }
+
+    .prev {
+        background: url("public/img/pd_slide_arrow_prev.svg") no-repeat contain/center;
+
+    }
+}
