@@ -56,6 +56,9 @@ const Collection = () => {
                 <div className="info-tit">
                   {sl.title}
                 </div>
+                <div className="name">
+                  {sl.name}
+                </div>
                 <div className="k-name">
                   {sl.kname}
                 </div>
