@@ -9,10 +9,19 @@ import Collection from "./sections/Collection"
 import TopBanner from './components/TopBanner'
 import FixedTopbtn from './components/FixedTopbtn'
 import { useState, useEffect } from 'react'
+import AOS from 'aos'
 
 function App() {
   const [topBanner, setTopBanner] = useState('')
   const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+      AOS.init({
+        duration:400,
+        easing:"ease"
+      });
+      
+    },[])
 
   const upTopBanner = () => {
     setTopBanner('up')

@@ -21,15 +21,16 @@
             height: 10rem;
             left: 0;
             bottom: 0;
-            background: var(--bg2);
+            background: var(--bg3);
         }
     }
     &#instargram {
-        padding: 10rem 0;
+        // padding: 10rem 0;
+        background: var(--bg3);
     }
 
     h2.tit {
-        font-size: 7.3rem;
+        font-size: 6rem;
         font-weight: 200;
     }
 

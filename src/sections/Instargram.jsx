@@ -14,14 +14,15 @@ const Instargram = () => {
         </p>
       </div>
       <ul className="instar-list">
-        {instar.map((sl)=>(
+        {instar.map((i)=>(
           <li 
           className='instar-item'
-          key={sl.id}>
+          key={i.id}>
             <a 
-            style={{backgroundImage:`url(${sl.image})`}}
-            href="#">
-              1
+            style={{backgroundImage:`url(${i.image})`}}
+            alt={i.alt}
+            href={i.link}>
+              {i.id}
             </a>
           </li>
         ))}

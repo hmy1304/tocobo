@@ -1,28 +1,33 @@
-import React, { useEffect} from 'react'
+import React from 'react'
 import categories from '../util/cta'
 import "./styles/Cta.scss"
-import AOS from "aos";
 import "aos/dist/aos.css";
 
 const Cta = () => {
-  useEffect(() => {
-    AOS.init();
-  },[])
+  const stagger = (base,idx,stag) => {
+    base+idx*stag
+  }
 
   return (
     <div className='inner cta-inner'>
-      <ul className="cta-list" data-aos="fade-up">
-        {categories.map((c)=>(
-          <a href={c.id}>
-            <div 
-            className="img-wrap" 
-            style={{backgroundImage:`url(${c.img.src})`}}>
+      <ul 
+      className="cta-list" 
+      >
+        {categories.map((c,i)=>(
+          <li key={c.id}
+          data-aos="fade-up"
+          data-aos-delay={stagger(1000,i,100)}>
+            <a href={c.id}>
+              <div 
+              className="img-wrap" 
+              style={{backgroundImage:`url(${c.img.src})`}}>
 
-            </div>
-            <p>
-              {c.name}
-            </p>
-          </a>
+              </div>
+              <p>
+                {c.name}
+              </p>
+            </a>
+          </li>
         ))}
       </ul>
 

@@ -1,23 +1,27 @@
 .instar-inner{
-    .tit {
-        color: var(--primary);
+    h2.tit {
+        color: var(--secondary);
     }
-    .txt {
+    p.txt {
+        font-family: "Source Serif Pro", serif;
+        font-style: italic;
+        font-size: 2rem;
         color: var(--muted);
-        margin: 2.2rem 0 4rem;
+        margin-top: 2.2rem;
     }
 
     .instar-list {
         display: flex;
-        justify-content: space-between;
-
+        gap: 1rem;
+        margin-top: 4rem;
         .instar-item {
-            width: 21rem;
-            height: 21rem;
+            flex: 1;
+            // width: 21rem;
+            // height: 21rem;
             a {
-                display: inline-block;
-                width: 100%;
-                height: 100%;
+                display: block;
+                width: 21rem;
+                height: 21rem;
                 background-position: center;
                 background-size: cover;
                 background-repeat: no-repeat;
