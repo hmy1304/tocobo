@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import "./styles/Hero.scss"
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -10,6 +10,18 @@ import { heroSlides } from '../util/hero';
 import { Pagination, Navigation } from 'swiper/modules';
 
 const Hero = () => {
+  const [isMobile, setIsMobile] = useState(
+    window.innerWidth<=1111
+  )
+
+  useEffect(()=>{
+    const handleResize = () => setIsMobile(window.innerWidth<=1111)
+
+    window.addEventListener('resize', handleResize)
+
+    return () => window.removeEventListener('resize', handleResize)
+  },[])
+
   return (
     <div className="hero-container">
       <Swiper
@@ -28,7 +40,7 @@ const Hero = () => {
           {heroSlides.map((slide)=>(
             <SwiperSlide
             className={`hero-slide ${slide.id}`}
-            style={{backgroundImage: `url(${slide.image.desktop})`}} 
+            style={{backgroundImage: `url(${isMobile? slide.image.mobile : slide.image.desktop})`}} 
             key={slide.id}>
               <div className="inner">
                 <div className="t-wrap">
