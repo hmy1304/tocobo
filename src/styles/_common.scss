@@ -164,3 +164,10 @@ footer {
     }
     
 }
+
+.mob-only {
+    display: none;
+    @media screen and (max-width:1111px) {
+        display: block;
+    }
+}

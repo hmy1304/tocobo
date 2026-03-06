@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import {
   logoData, 
   companyData,
@@ -9,6 +9,39 @@ import {
 import "./styles/Footer.scss"
 
 const Footer = () => {
+  const [isOpen, setIsOpen] = useState(false)
+  const hiddenContentRef = useRef(null) 
+
+  useEffect(()=>{
+    const handleResize = () => {
+      setIsOpen(window.innerWidth>=1111)
+    }
+    handleResize()
+
+    window.addEventListener('resize', handleResize)
+
+    return () => window.removeEventListener('resize', handleResize)
+  },[])
+
+  useEffect(()=>{
+    const el = hiddenContentRef.current
+    if(isOpen) {
+      el.style.height = `${el.scrollHeight}px`
+
+      const onTransitionEnd = () => {
+        el.style.height = "auto"
+        el.removeEventListener('transitionend',onTransitionEnd)
+      }
+      el.addEventListener('transitionEnd', onTransitionEnd)
+    } else {
+      el.style.height = `${el.scrollHeight}px`
+
+      void el.offsetHeight 
+
+      el.style.height = '0px'
+    }
+  },[isOpen])
+
   return (
     <footer>
       <div className='inner footer-inner'>
@@ -59,11 +92,20 @@ const Footer = () => {
         </div>
 
         <div className="right">
-          <div className='cus-wrap'>
+          <div 
+          onClick={()=>{
+            if (window.innerWidth >= 1111) return
+            setIsOpen(prevStatus=>!prevStatus)
+          }}
+          className={`cus-wrap ${isOpen? "open" : ""}`}>
+             
             <h4>
               {customerCenterData.title}
+              <span className='mob-only m-plus'>
+
+              </span>
             </h4>
-            <div className="hidden">
+            <div className="hidden" ref={hiddenContentRef}>
               <p className="cs-box">
                 <a href={customerCenterData.tel.href}>
                   {customerCenterData.tel.value}
@@ -75,6 +117,19 @@ const Footer = () => {
                 {customerCenterData.talk.label}
               </a>
             </div>
+          </div>
+          <div className="footer-legal mob-only">
+            
+            <div className="legal-links">
+              {footerLegal.links.map((l,i)=>(
+                <a href={l.href} key={i}>
+                  {l.label}
+                </a>
+              ))}
+            </div>
+            <p>
+              {footerLegal.copyright}
+            </p>
           </div>
           <ul className='sns-links'>
             {socialLinks.map((sns)=>(

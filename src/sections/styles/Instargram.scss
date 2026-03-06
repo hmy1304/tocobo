@@ -3,29 +3,22 @@
         color: var(--secondary);
     }
     p.txt {
-        font-family: "Source Serif Pro", serif;
-        font-style: italic;
+        font-family: 'Source Serif Pro',serif;
         font-size: 2rem;
-        color: var(--muted);
-        margin-top: 2.2rem;
+        font-style: italic;
     }
 
-    .instar-list {
+    .instar-list{
         display: flex;
         gap: 1rem;
         margin-top: 4rem;
-        .instar-item {
-            flex: 1;
-            // width: 21rem;
-            // height: 21rem;
-            a {
+        li{
+            flex:1;
+            a{
                 display: block;
-                width: 21rem;
                 height: 21rem;
-                background-position: center;
                 background-size: cover;
-                background-repeat: no-repeat;
-                font-size: 0;
+                background-position: center;
             }
         }
     }
